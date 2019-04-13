@@ -1,3 +1,15 @@
+
 .card {
-    flex: 1 0 12em;
+    flex: 1 0 12em
 }
+
+.card-body{
+    
+    h5 {
+        font-size: $card-font-size;
+    }
+}
+
+
+
+

@@ -1,3 +1,5 @@
+import { add as addToCart } from './cart';
+
 export function add(product){
     /**
      * Add a product item to the shopping list
@@ -31,15 +33,19 @@ export function add(product){
     const cardText = document.createElement('p');
     cardText.className = 'card-text';
     cardText.innerHTML = `
-    <h5 class="pink-text">${product.material}</h5>
+    <h5 class="pink-text"><i class="fas fa-utensils mr-2"></i>${product.material}</h5>
     <span class="badge badge-secondary">${product.adjective}</span>
-    <span class="badge badge-primary">${product.price}</span>
+    <span class="badge badge-primary">${product.price}$</span>
     `;
 
     // creat card button
     const cardButton = document.createElement('button');
     cardButton.className = 'btn btn-unique btn-block btn-sm waves-effect waves-light';
     cardButton.innerHTML = '<i class="fas fa-plus mr-2"></i> Add to cart';
+    cardButton.addEventListener('click' , () => {
+        addToCart(product);
+    });
+
 
     // add card's title , text and button elements to card's body element
     cardBody.appendChild(cardTitle);

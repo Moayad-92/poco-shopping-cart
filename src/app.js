@@ -1,5 +1,6 @@
 import  faker from 'faker' ;
 import { add } from './list';
+import { init } from './cart';
 
 function fillShoppingCart() {
     for(let i=0 ;i<21 ;i++){
@@ -14,5 +15,5 @@ function fillShoppingCart() {
     }
 
 }
-
+init();
 fillShoppingCart();
